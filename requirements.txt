@@ -1,0 +1,14 @@
+pyqt6==6.9.1
+PyQt6-WebEngine==6.9.0
+PyQt6-Charts==6.9.0
+qasync==0.27.1
+Markdown==3.8.2
+scipy==1.16.0
+requests==2.32.3
+websockets==13.1
+solders==0.23.0
+solana
+base58
+cryptography
+pyinstaller
+pillow
