@@ -854,7 +854,7 @@ class MainWindow(QMainWindow):
         self.general_inputs.addRow("<b>Slippage (%):</b>", self.max_slippage)
         self.general_inputs.addRow("<b>Buy size (sol):</b>", self.buy_size)
         self.general_inputs.addRow("<b>Priority fee (sol):</b>", self.priority_fee)
-        self.general_inputs.addRow("<b>Tokens before batch resets (sec):</b>", self.batch_reset_size)
+        self.general_inputs.addRow("<b>Tokens before batch resets:</b>", self.batch_reset_size)
         self.general_inputs.addRow("<b>Time of inactivity before selling (sec):</b>", self.inactivity_reset_time)
         self.use_imported_wallet = QCheckBox("⚠️")
         self.use_imported_wallet.setToolTip("When checked, this will enable real trading using the imported wallet. Be aware of the risks!")
