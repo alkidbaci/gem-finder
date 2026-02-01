@@ -619,7 +619,7 @@ class MainWindow(QMainWindow):
         self.stacked = QStackedWidget()
         self.settings = QSettings("Alkid", "Gem-finder")
         self.uptime = 0
-        self.pnl_to_report = None
+        self.pnl_to_report = 0
 
         self.sniper_widget = QWidget()
         self.copy_trade_widget = QWidget()
@@ -1368,10 +1368,10 @@ class MainWindow(QMainWindow):
         self.batch_reset_size.setValue(10)
         self.inactivity_reset_time.setValue(4)
         self.use_imported_wallet.setChecked(False)
-        for cond in self.enter_conditions:
+        for cond in list(self.enter_conditions):
             cond.remove_self()
         self.interpretable_enter_conditions = []
-        for cond in self.exit_conditions:
+        for cond in list(self.exit_conditions):
             cond.remove_self()
         self.interpretable_exit_conditions = []
 
@@ -1415,6 +1415,7 @@ class MainWindow(QMainWindow):
         )
         if filename:
             try:
+                self.reset_to_default_state()
                 with open(filename, "r", encoding="utf-8") as f:
                     state = json.load(f)
                     self.sol_balance.setValue(float(state.get("sol_balance", 5)))
